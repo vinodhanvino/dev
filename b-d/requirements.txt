@@ -4,3 +4,5 @@ SQLAlchemy==2.0.36
 pypattyrn==1.2
 srsly
 tqdm
+sqlalchemy-json==0.7.0
+pytz==2024.2
