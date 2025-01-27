@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["vinodhanvino <vinodhanshiva@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.32.3"
+fastapi = "0.115.6"
+uvicorn = "0.34.0"
+sqlalchemy = "2.0.36"
+pypattyrn = "1.2"
+tqdm = "^4.67.1"
+sqlalchemy-json = "0.7.0"
+pytz = "2024.2"
+psycopg2-binary = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

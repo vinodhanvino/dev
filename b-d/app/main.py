@@ -1,8 +1,8 @@
-from distutils.command.config import config
 
 import uvicorn
 from fastapi import FastAPI
 from config.connection import DBCtrl
+from users import user_routes
 
 dbCtrl : DBCtrl = DBCtrl()
 app: FastAPI = dbCtrl.app
@@ -10,7 +10,7 @@ app: FastAPI = dbCtrl.app
 
 
 
-app.include_router()
+app.include_router(user_routes.router, prefix='/users_')
 
 
 

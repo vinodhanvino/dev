@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pypattyrn.creational.singleton import Singleton
 from sqlalchemy import create_engine
-from _config import DB_PROD_URL
+from config._config import DB_PROD_URL
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.scoping import ScopedSession, scoped_session
 from starlette.middleware.cors import CORSMiddleware
