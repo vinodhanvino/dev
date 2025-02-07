@@ -41,3 +41,16 @@ def isvlaid(char):
 
     return not result
 
+def check_polimer(word):
+    word = word.lower()
+    return word == word[::-1]
+
+
+def missingNumber(numbers):
+
+    for i in range(min(numbers),len(numbers)+1):
+        if i not in numbers:
+            return i
+    return -1
+
+print(missingNumber([9,6,4,2,3,5,7,0,1]))

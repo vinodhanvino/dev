@@ -1,11 +1,13 @@
 from app.config.connection import DBCtrl
-from sqlalchemy import Column, Integer, String, DateTime, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, or_
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_json import mutable_json_type
 from sqlalchemy.dialects.postgresql import JSONB
 
 import datetime
 import pytz
+import hashlib
+import os
 
 
 IST = pytz.timezone('Asia/Kolkata')
@@ -25,6 +27,7 @@ class User(Base):
     username = Column(String)
     email = Column(String)
     password_hash = Column(String)
+    salt = Column(String)
     bio = Column(String)
     profile_pic = Column(String)
     interest = Column(String)
@@ -33,8 +36,9 @@ class User(Base):
     archived = Column(Boolean, default=False)
     more = Column(mutable_json_type(dbtype=JSONB, nested=True), default={})
 
-    @staticmethod
-    def addUser(**kwargs):
-        user = User()
-        user.username = ''
+
+
+
+
+
 Base.metadata.create_all(bind=DBCtrl().dbengine, checkfirst=True)
